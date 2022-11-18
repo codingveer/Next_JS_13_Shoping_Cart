@@ -3,14 +3,11 @@
 import useSWR from "swr";
 import Link from "next/link";
 
-
-
+async function fetcher(){
+   return  fetch(`https://product-app-101-server.vercel.app/api/products`).then(res => res.json());
+}    
 export default function BlogList(){
-    function fetcher() {
-        fetch(`https://product-app-101-server.vercel.app/api/products`)
-        .then(res => res.json());
-    }
-    const blogs = fetcher();
+    const blogs = useSWR("api/products", fetcher)
     console.log(blogs, 'blogs')
     return (
            <div>

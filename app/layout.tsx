@@ -9,10 +9,13 @@ export default function RootLayout({
   return (
     <html>
       <head></head>
-      <body className='container'>
-        <Navigation/>
-        <WordGenerator/>
-        {children}
+      <body >
+        <div className='container'>
+            <Navigation/>
+            {children}
+        </div>
+        {/* <WordGenerator/> */}
+       
       </body>
     </html>
   )
